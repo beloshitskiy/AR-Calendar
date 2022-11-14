@@ -1,19 +1,16 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  AR-Calendar
 //
-//  Created by Denis Beloshitskiy on 11/14/22.
+//  Created by Denis Beloshitskiy
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
+final class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
   }
-
-
 }
-
