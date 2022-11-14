@@ -12,8 +12,8 @@ final class DataLoader {
     WelcomeGuideModel(textBlocks: loadData(filename))
   }
 
-  static func loadMonthsData(_ filename: String) -> [String: Month] {
-    loadData(filename)
+  static func loadMonthsData(_ filename: String) -> MonthsModel {
+    MonthsModel(months: loadData(filename))
   }
 
   private static func loadData<T: Decodable>(_ filename: String) -> T {

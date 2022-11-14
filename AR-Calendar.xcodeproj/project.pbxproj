@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D45DAA82922E5DF001F2A59 /* MonthsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D45DAA72922E5DF001F2A59 /* MonthsModel.swift */; };
 		2D4E76332922C06A0006AB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E76322922C06A0006AB78 /* AppDelegate.swift */; };
 		2D4E76352922C06A0006AB78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E76342922C06A0006AB78 /* SceneDelegate.swift */; };
 		2D4E763C2922C06A0006AB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4E763B2922C06A0006AB78 /* Assets.xcassets */; };
@@ -17,13 +18,13 @@
 		2DAEE7CD2922CEEF00A86792 /* WelcomeGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEE7CC2922CEEF00A86792 /* WelcomeGuideView.swift */; };
 		2DAEE7CF2922D86900A86792 /* WelcomeGuideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEE7CE2922D86900A86792 /* WelcomeGuideModel.swift */; };
 		2DAEE7D12922D8E800A86792 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEE7D02922D8E800A86792 /* DataLoader.swift */; };
-		2DAEE7D52922D96900A86792 /* MonthsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEE7D42922D96900A86792 /* MonthsModel.swift */; };
 		2DAEE7D82922DA4600A86792 /* monthsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DAEE7D72922DA4600A86792 /* monthsData.json */; };
 		2DAEE7DA2922DA4B00A86792 /* welcomeGuideData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DAEE7D92922DA4B00A86792 /* welcomeGuideData.json */; };
 		2DAEE7DC2922E32400A86792 /* NSAttributedString+Hyperlink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEE7DB2922E32400A86792 /* NSAttributedString+Hyperlink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D45DAA72922E5DF001F2A59 /* MonthsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthsModel.swift; path = "AR-Calendar/MonthsModel.swift"; sourceTree = SOURCE_ROOT; };
 		2D4E762F2922C06A0006AB78 /* AR-Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4E76322922C06A0006AB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D4E76342922C06A0006AB78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		2DAEE7CC2922CEEF00A86792 /* WelcomeGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeGuideView.swift; sourceTree = "<group>"; };
 		2DAEE7CE2922D86900A86792 /* WelcomeGuideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeGuideModel.swift; sourceTree = "<group>"; };
 		2DAEE7D02922D8E800A86792 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
-		2DAEE7D42922D96900A86792 /* MonthsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsModel.swift; sourceTree = "<group>"; };
 		2DAEE7D72922DA4600A86792 /* monthsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = monthsData.json; sourceTree = "<group>"; };
 		2DAEE7D92922DA4B00A86792 /* welcomeGuideData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = welcomeGuideData.json; sourceTree = "<group>"; };
 		2DAEE7DB2922E32400A86792 /* NSAttributedString+Hyperlink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Hyperlink.swift"; sourceTree = "<group>"; };
@@ -74,6 +74,7 @@
 			children = (
 				2D4E76322922C06A0006AB78 /* AppDelegate.swift */,
 				2D4E76342922C06A0006AB78 /* SceneDelegate.swift */,
+				2D45DAA72922E5DF001F2A59 /* MonthsModel.swift */,
 				2DAEE7CB2922CEE100A86792 /* WelcomeGuide */,
 				2DAEE7D22922D93E00A86792 /* Main */,
 				2DAEE7D62922DA2100A86792 /* Resources */,
@@ -100,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				2D4E76482922C2F50006AB78 /* MainViewController.swift */,
-				2DAEE7D42922D96900A86792 /* MonthsModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -219,8 +219,8 @@
 				2D4E76332922C06A0006AB78 /* AppDelegate.swift in Sources */,
 				2DAEE7CD2922CEEF00A86792 /* WelcomeGuideView.swift in Sources */,
 				2DAEE7DC2922E32400A86792 /* NSAttributedString+Hyperlink.swift in Sources */,
-				2DAEE7D52922D96900A86792 /* MonthsModel.swift in Sources */,
 				2D4E76352922C06A0006AB78 /* SceneDelegate.swift in Sources */,
+				2D45DAA82922E5DF001F2A59 /* MonthsModel.swift in Sources */,
 				2D4E76492922C2F50006AB78 /* MainViewController.swift in Sources */,
 				2DAEE7D12922D8E800A86792 /* DataLoader.swift in Sources */,
 			);
