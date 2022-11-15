@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     if isGuideCompleted {
       rootVC = MainViewController()
     } else {
-      rootVC = WelcomeGuideViewContoller()
+      rootVC = WelcomeGuideViewController()
     }
 
     window.rootViewController = rootVC

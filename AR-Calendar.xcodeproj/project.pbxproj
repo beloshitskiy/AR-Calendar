@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2D45DAA82922E5DF001F2A59 /* MonthsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D45DAA72922E5DF001F2A59 /* MonthsModel.swift */; };
+		2D45DAAB2922F3DD001F2A59 /* HandlersKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2D45DAAA2922F3DD001F2A59 /* HandlersKit */; };
 		2D4E76332922C06A0006AB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E76322922C06A0006AB78 /* AppDelegate.swift */; };
 		2D4E76352922C06A0006AB78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E76342922C06A0006AB78 /* SceneDelegate.swift */; };
 		2D4E763C2922C06A0006AB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4E763B2922C06A0006AB78 /* Assets.xcassets */; };
 		2D4E763F2922C06A0006AB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4E763D2922C06A0006AB78 /* LaunchScreen.storyboard */; };
-		2D4E76472922C1520006AB78 /* WelcomeGuideViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E76462922C1520006AB78 /* WelcomeGuideViewContoller.swift */; };
+		2D4E76472922C1520006AB78 /* WelcomeGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E76462922C1520006AB78 /* WelcomeGuideViewController.swift */; };
 		2D4E76492922C2F50006AB78 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E76482922C2F50006AB78 /* MainViewController.swift */; };
 		2D4E764D2922C7FC0006AB78 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2D4E764C2922C7FC0006AB78 /* SnapKit */; };
 		2DAEE7CD2922CEEF00A86792 /* WelcomeGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEE7CC2922CEEF00A86792 /* WelcomeGuideView.swift */; };
@@ -31,7 +32,7 @@
 		2D4E763B2922C06A0006AB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D4E763E2922C06A0006AB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D4E76402922C06A0006AB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D4E76462922C1520006AB78 /* WelcomeGuideViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeGuideViewContoller.swift; sourceTree = "<group>"; };
+		2D4E76462922C1520006AB78 /* WelcomeGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeGuideViewController.swift; sourceTree = "<group>"; };
 		2D4E76482922C2F50006AB78 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2DAEE7CC2922CEEF00A86792 /* WelcomeGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeGuideView.swift; sourceTree = "<group>"; };
 		2DAEE7CE2922D86900A86792 /* WelcomeGuideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeGuideModel.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D45DAAB2922F3DD001F2A59 /* HandlersKit in Frameworks */,
 				2D4E764D2922C7FC0006AB78 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,9 +92,9 @@
 		2DAEE7CB2922CEE100A86792 /* WelcomeGuide */ = {
 			isa = PBXGroup;
 			children = (
-				2D4E76462922C1520006AB78 /* WelcomeGuideViewContoller.swift */,
-				2DAEE7CC2922CEEF00A86792 /* WelcomeGuideView.swift */,
 				2DAEE7CE2922D86900A86792 /* WelcomeGuideModel.swift */,
+				2DAEE7CC2922CEEF00A86792 /* WelcomeGuideView.swift */,
+				2D4E76462922C1520006AB78 /* WelcomeGuideViewController.swift */,
 			);
 			path = WelcomeGuide;
 			sourceTree = "<group>";
@@ -133,6 +135,7 @@
 			name = "AR-Calendar";
 			packageProductDependencies = (
 				2D4E764C2922C7FC0006AB78 /* SnapKit */,
+				2D45DAAA2922F3DD001F2A59 /* HandlersKit */,
 			);
 			productName = "AR-Calendar";
 			productReference = 2D4E762F2922C06A0006AB78 /* AR-Calendar.app */;
@@ -164,6 +167,7 @@
 			mainGroup = 2D4E76262922C06A0006AB78;
 			packageReferences = (
 				2D4E764B2922C7FC0006AB78 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2D45DAA92922F3DD001F2A59 /* XCRemoteSwiftPackageReference "HandlersKit" */,
 			);
 			productRefGroup = 2D4E76302922C06A0006AB78 /* Products */;
 			projectDirPath = "";
@@ -214,7 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D4E76472922C1520006AB78 /* WelcomeGuideViewContoller.swift in Sources */,
+				2D4E76472922C1520006AB78 /* WelcomeGuideViewController.swift in Sources */,
 				2DAEE7CF2922D86900A86792 /* WelcomeGuideModel.swift in Sources */,
 				2D4E76332922C06A0006AB78 /* AppDelegate.swift in Sources */,
 				2DAEE7CD2922CEEF00A86792 /* WelcomeGuideView.swift in Sources */,
@@ -369,7 +373,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,7 +405,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,6 +446,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2D45DAA92922F3DD001F2A59 /* XCRemoteSwiftPackageReference "HandlersKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hhru/HandlersKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		2D4E764B2922C7FC0006AB78 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -453,6 +465,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2D45DAAA2922F3DD001F2A59 /* HandlersKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D45DAA92922F3DD001F2A59 /* XCRemoteSwiftPackageReference "HandlersKit" */;
+			productName = HandlersKit;
+		};
 		2D4E764C2922C7FC0006AB78 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2D4E764B2922C7FC0006AB78 /* XCRemoteSwiftPackageReference "SnapKit" */;
