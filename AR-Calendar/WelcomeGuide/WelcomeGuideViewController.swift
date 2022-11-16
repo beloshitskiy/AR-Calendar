@@ -5,7 +5,6 @@
 //  Created by Denis Beloshitskiy
 //
 
-import Foundation
 import HandlersKit
 import SnapKit
 import UIKit
@@ -13,12 +12,11 @@ import UIKit
 final class WelcomeGuideViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor(named: "DarkGray")
-
-    let data = DataLoader.loadGuideData(guideDataPath)
-
-    let welcomeGuideView = WelcomeGuideView(data)
-    
+    setupSubviews()
+  }
+  
+  private func setupSubviews() {
+    view.backgroundColor = Colors.darkGray
     view.addSubview(welcomeGuideView)
     view.addSubview(continueButton)
 
@@ -44,14 +42,20 @@ final class WelcomeGuideViewController: UIViewController {
     let transition = CATransition()
     transition.duration = 0.3
     transition.type = CATransitionType.push
-    transition.subtype = CATransitionSubtype.fromBottom
+    transition.subtype = CATransitionSubtype.fromRight
     guard let window = view.window else { return }
     window.layer.add(transition, forKey: kCATransition)
     
     present(mainController, animated: false, completion: nil)
   }
   
-  private lazy var continueButton: UIButton = {
+  private lazy var welcomeGuideView: WelcomeGuideView = {
+    let data = DataLoader.loadGuideData()
+    let view = WelcomeGuideView(data)
+    return view
+  }()
+  
+  private lazy var continueButton: UIButton = { [weak self] in
     let button = UIButton(type: .system)
     
     var buttonText = AttributedString("Продолжить")
@@ -60,17 +64,15 @@ final class WelcomeGuideViewController: UIViewController {
     var config = UIButton.Configuration.filled()
     config.cornerStyle = .medium
     config.attributedTitle = buttonText
-    config.baseForegroundColor = UIColor(named: "DarkGray")
-    config.baseBackgroundColor = UIColor(named: "LightGray")
+    config.baseForegroundColor = Colors.darkGray
+    config.baseBackgroundColor = Colors.lightGray
 
     button.configuration = config
     
     button.onTap {
-      self.completeGuide()
+      self?.completeGuide()
     }
     
     return button
   }()
 }
-
-private let guideDataPath = "welcomeGuideData.json"

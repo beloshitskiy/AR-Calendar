@@ -66,7 +66,7 @@ final class WelcomeGuideView: UIView {
     header.numberOfLines = 1
     header.font = .systemFont(ofSize: 34, weight: .bold)
     header.contentMode = .left
-    header.textColor = UIColor(named: "LightGray")
+    header.textColor = Colors.lightGray
     
     return header
   }()
@@ -109,7 +109,7 @@ final class WelcomeGuideView: UIView {
                                                                in: textView.text,
                                                                as: "по ссылке")
     
-    textView.textColor = UIColor(named: "LightGray")
+    textView.textColor = Colors.lightGray
     textView.font = .boldSystemFont(ofSize: 17)
     textView.tintColor = .link
     
