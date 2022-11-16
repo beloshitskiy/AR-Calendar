@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2D45DAA82922E5DF001F2A59 /* MonthsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D45DAA72922E5DF001F2A59 /* MonthsModel.swift */; };
 		2D45DAAB2922F3DD001F2A59 /* HandlersKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2D45DAAA2922F3DD001F2A59 /* HandlersKit */; };
+		2D45DAB329250C2A001F2A59 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D45DAB229250C2A001F2A59 /* BottomSheetView.swift */; };
+		2D45DAB929253B9D001F2A59 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D45DAB829253B9C001F2A59 /* UIColor+CustomColors.swift */; };
+		2D45DAC029256C43001F2A59 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D45DABF29256C43001F2A59 /* BottomSheetViewController.swift */; };
 		2D4E76332922C06A0006AB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E76322922C06A0006AB78 /* AppDelegate.swift */; };
 		2D4E76352922C06A0006AB78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4E76342922C06A0006AB78 /* SceneDelegate.swift */; };
 		2D4E763C2922C06A0006AB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4E763B2922C06A0006AB78 /* Assets.xcassets */; };
@@ -26,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		2D45DAA72922E5DF001F2A59 /* MonthsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthsModel.swift; path = "AR-Calendar/MonthsModel.swift"; sourceTree = SOURCE_ROOT; };
+		2D45DAB229250C2A001F2A59 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		2D45DAB829253B9C001F2A59 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
+		2D45DABF29256C43001F2A59 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		2D4E762F2922C06A0006AB78 /* AR-Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4E76322922C06A0006AB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D4E76342922C06A0006AB78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +61,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D45DAB129250C10001F2A59 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				2D45DAB229250C2A001F2A59 /* BottomSheetView.swift */,
+				2D45DABF29256C43001F2A59 /* BottomSheetViewController.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		2D45DABA29253C98001F2A59 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2DAEE7D02922D8E800A86792 /* DataLoader.swift */,
+				2DAEE7DB2922E32400A86792 /* NSAttributedString+Hyperlink.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		2D4E76262922C06A0006AB78 = {
 			isa = PBXGroup;
 			children = (
@@ -80,10 +104,7 @@
 				2DAEE7CB2922CEE100A86792 /* WelcomeGuide */,
 				2DAEE7D22922D93E00A86792 /* Main */,
 				2DAEE7D62922DA2100A86792 /* Resources */,
-				2DAEE7D02922D8E800A86792 /* DataLoader.swift */,
-				2DAEE7DB2922E32400A86792 /* NSAttributedString+Hyperlink.swift */,
-				2D4E763B2922C06A0006AB78 /* Assets.xcassets */,
-				2D4E763D2922C06A0006AB78 /* LaunchScreen.storyboard */,
+				2D45DABA29253C98001F2A59 /* Utils */,
 				2D4E76402922C06A0006AB78 /* Info.plist */,
 			);
 			path = "AR-Calendar";
@@ -103,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				2D4E76482922C2F50006AB78 /* MainViewController.swift */,
+				2D45DAB129250C10001F2A59 /* BottomSheet */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -110,6 +132,9 @@
 		2DAEE7D62922DA2100A86792 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2D4E763D2922C06A0006AB78 /* LaunchScreen.storyboard */,
+				2D4E763B2922C06A0006AB78 /* Assets.xcassets */,
+				2D45DAB829253B9C001F2A59 /* UIColor+CustomColors.swift */,
 				2DAEE7D92922DA4B00A86792 /* welcomeGuideData.json */,
 				2DAEE7D72922DA4600A86792 /* monthsData.json */,
 			);
@@ -219,14 +244,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D4E76472922C1520006AB78 /* WelcomeGuideViewController.swift in Sources */,
+				2D45DAB329250C2A001F2A59 /* BottomSheetView.swift in Sources */,
 				2DAEE7CF2922D86900A86792 /* WelcomeGuideModel.swift in Sources */,
 				2D4E76332922C06A0006AB78 /* AppDelegate.swift in Sources */,
+				2D45DAB929253B9D001F2A59 /* UIColor+CustomColors.swift in Sources */,
 				2DAEE7CD2922CEEF00A86792 /* WelcomeGuideView.swift in Sources */,
 				2DAEE7DC2922E32400A86792 /* NSAttributedString+Hyperlink.swift in Sources */,
 				2D4E76352922C06A0006AB78 /* SceneDelegate.swift in Sources */,
 				2D45DAA82922E5DF001F2A59 /* MonthsModel.swift in Sources */,
 				2D4E76492922C2F50006AB78 /* MainViewController.swift in Sources */,
 				2DAEE7D12922D8E800A86792 /* DataLoader.swift in Sources */,
+				2D45DAC029256C43001F2A59 /* BottomSheetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +393,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LQ3YPWD94;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AR-Calendar/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
@@ -373,7 +402,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -397,6 +426,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LQ3YPWD94;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AR-Calendar/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
@@ -405,7 +435,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
