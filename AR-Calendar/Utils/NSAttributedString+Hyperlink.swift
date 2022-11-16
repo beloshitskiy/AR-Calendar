@@ -2,11 +2,12 @@
 //  NSAttributedString+Hyperlink.swift
 //  AR-Calendar
 //
-//  Created by Denis Beloshitskiy on 11/14/22.
+//  Created by Denis Beloshitskiy
 //
 
 import Foundation
 
+// NSAttributedString extension for creating hyperlinks
 extension NSAttributedString {
   static func makeHyperLink(for path: String, in string: String, as substring: String)
     -> NSAttributedString {
