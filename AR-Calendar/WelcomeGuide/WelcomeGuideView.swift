@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import HandlersKit
 import SnapKit
 import UIKit
 
@@ -41,8 +40,6 @@ final class WelcomeGuideView: UIView {
   private func setupView() {
     addSubview(headerView)
     addSubview(stackView)
-    addSubview(buttonView)
-    
     setupLayout()
   }
   
@@ -54,16 +51,9 @@ final class WelcomeGuideView: UIView {
     
     stackView.snp.makeConstraints { make in
       make.top.equalTo(headerView).offset(45)
-      make.bottom.equalTo(buttonView).offset(-45)
+      make.bottom.equalToSuperview()
       make.leading.equalToSuperview().offset(20)
       make.trailing.equalToSuperview().offset(-20)
-    }
-    
-    buttonView.snp.makeConstraints { make in
-      make.bottom.equalToSuperview().offset(-20)
-      make.centerX.equalToSuperview()
-      make.width.equalTo(175)
-      make.height.equalTo(45)
     }
   }
   
@@ -76,28 +66,9 @@ final class WelcomeGuideView: UIView {
     header.numberOfLines = 1
     header.font = .systemFont(ofSize: 34, weight: .bold)
     header.contentMode = .left
-    header.textColor = UIColor(named: "LightGray")
+    header.textColor = Colors.lightGray
     
     return header
-  }()
-  
-  // MARK: - ButtonView
-  
-  private lazy var buttonView: UIButton = {
-    let button = UIButton(type: .system)
-    
-    var buttonText = AttributedString("Продолжить")
-    buttonText.font = .systemFont(ofSize: 19, weight: .bold)
-    
-    var config = UIButton.Configuration.filled()
-    config.cornerStyle = .medium
-    config.attributedTitle = buttonText
-    config.baseForegroundColor = UIColor(named: "DarkGray")
-    config.baseBackgroundColor = UIColor(named: "LightGray")
-
-    button.configuration = config
-    
-    return button
   }()
   
   // MARK: - StackView
@@ -138,7 +109,7 @@ final class WelcomeGuideView: UIView {
                                                                in: textView.text,
                                                                as: "по ссылке")
     
-    textView.textColor = UIColor(named: "LightGray")
+    textView.textColor = Colors.lightGray
     textView.font = .boldSystemFont(ofSize: 17)
     textView.tintColor = .link
     

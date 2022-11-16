@@ -1,27 +1,35 @@
 //
-//  WelcomeGuideViewContoller.swift
+//  WelcomeGuideViewController.swift
 //  AR-Calendar
 //
 //  Created by Denis Beloshitskiy
 //
 
-import Foundation
+import HandlersKit
 import SnapKit
 import UIKit
 
 final class WelcomeGuideViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    let data = DataLoader.loadGuideData(guideDataPath)
-
-    let welcomeGuideView = WelcomeGuideView(data)
-    
+    setupSubviews()
+  }
+  
+  private func setupSubviews() {
+    view.backgroundColor = Colors.darkGray
     view.addSubview(welcomeGuideView)
-    view.backgroundColor = UIColor(named: "DarkGray")
+    view.addSubview(continueButton)
 
     welcomeGuideView.snp.makeConstraints { make in
-      make.edges.equalTo(view.safeAreaLayoutGuide)
+      make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+      make.bottom.equalTo(continueButton.snp.top).offset(-30)
+    }
+    
+    continueButton.snp.makeConstraints { make in
+      make.width.equalTo(175)
+      make.height.equalTo(45)
+      make.centerX.equalToSuperview()
+      make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
     }
   }
   
@@ -38,8 +46,33 @@ final class WelcomeGuideViewController: UIViewController {
     guard let window = view.window else { return }
     window.layer.add(transition, forKey: kCATransition)
     
-    present(mainController, animated: true, completion: nil)
+    present(mainController, animated: false, completion: nil)
   }
-}
+  
+  private lazy var welcomeGuideView: WelcomeGuideView = {
+    let data = DataLoader.loadGuideData()
+    let view = WelcomeGuideView(data)
+    return view
+  }()
+  
+  private lazy var continueButton: UIButton = { [weak self] in
+    let button = UIButton(type: .system)
+    
+    var buttonText = AttributedString("Продолжить")
+    buttonText.font = .systemFont(ofSize: 19, weight: .bold)
+    
+    var config = UIButton.Configuration.filled()
+    config.cornerStyle = .medium
+    config.attributedTitle = buttonText
+    config.baseForegroundColor = Colors.darkGray
+    config.baseBackgroundColor = Colors.lightGray
 
-private let guideDataPath = "welcomeGuideData.json"
+    button.configuration = config
+    
+    button.onTap {
+      self?.completeGuide()
+    }
+    
+    return button
+  }()
+}

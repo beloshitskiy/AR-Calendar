@@ -5,7 +5,7 @@
 //  Created by Denis Beloshitskiy
 //
 
-struct MonthsModel {
+public struct MonthsModel {
   let months: [String: Month]
 
   struct Month: Decodable {

@@ -7,12 +7,17 @@
 
 import Foundation
 
-final class DataLoader {
-  static func loadGuideData(_ filename: String) -> WelcomeGuideModel {
+private enum DefaultFilePaths {
+  static let guideData = "welcomeGuideData.json"
+  static let monthsData = "monthsData.json"
+}
+
+public final class DataLoader {
+  static func loadGuideData(_ filename: String = DefaultFilePaths.guideData) -> WelcomeGuideModel {
     WelcomeGuideModel(textBlocks: loadData(filename))
   }
 
-  static func loadMonthsData(_ filename: String) -> MonthsModel {
+  static func loadMonthsData(_ filename: String = DefaultFilePaths.monthsData) -> MonthsModel {
     MonthsModel(months: loadData(filename))
   }
 
