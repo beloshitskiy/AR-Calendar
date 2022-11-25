@@ -1,10 +1,3 @@
-//
-//  MonthsModel.swift
-//  AR-Calendar
-//
-//  Created by Denis Beloshitskiy
-//
-
 public struct MonthsModel {
   let months: [String: Month]
 

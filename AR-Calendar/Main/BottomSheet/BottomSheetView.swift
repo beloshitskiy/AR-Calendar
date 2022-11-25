@@ -1,10 +1,3 @@
-//
-//  BottomSheetView.swift
-//  AR-Calendar
-//
-//  Created by Denis Beloshitskiy
-//
-
 import SnapKit
 import UIKit
 
@@ -20,18 +13,32 @@ final class BottomSheetView: UIStackView {
   }
 
   @available(*, unavailable)
-  required init(coder: NSCoder) {
+  required init(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
   func updateContent(with month: MonthsModel.Month) {
-    print(aboutImageView.subviews)
-    print(aboutIETView.subviews)
+    guard let title = aboutImageView.subviews[1] as? UILabel,
+          let imageTextBlock = aboutImageView.subviews[2] as? UITextView,
+          let mainTextBlock = aboutIETView.subviews[1] as? UITextView,
+          title.text != month.title,
+          imageTextBlock.text != month.imageTextBlock,
+          mainTextBlock.text != month.mainTextBlock else { return }
+
+    title.text = month.title
+    imageTextBlock.text = month.imageTextBlock
+    mainTextBlock.text = month.mainTextBlock
   }
 
   private func setupConstraints() {
-    aboutImageView.snp.makeConstraints { $0.horizontalEdges.equalToSuperview() }
-    aboutIETView.snp.makeConstraints { $0.horizontalEdges.equalToSuperview() }
+    aboutImageView.snp.makeConstraints { make in
+      make.top.horizontalEdges.equalToSuperview()
+//      make.bottom.equalTo(self.snp.center)
+    }
+    aboutIETView.snp.makeConstraints { make in
+      make.top.equalTo(aboutImageView)
+      make.bottom.horizontalEdges.equalToSuperview()
+    }
   }
 
   private let aboutImageView: UIView = {
