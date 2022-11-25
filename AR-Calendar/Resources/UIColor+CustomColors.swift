@@ -1,10 +1,3 @@
-//
-//  UIColor+CustomColors.swift
-//  AR-Calendar
-//
-//  Created by Denis Beloshitskiy
-//
-
 import UIKit
 
 public enum Colors {

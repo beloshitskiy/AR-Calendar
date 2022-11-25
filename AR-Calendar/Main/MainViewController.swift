@@ -1,10 +1,3 @@
-//
-//  MainViewController.swift
-//  AR-Calendar
-//
-//  Created by Denis Beloshitskiy
-//
-
 import ARKit
 import Foundation
 import SnapKit
@@ -18,26 +11,28 @@ final class MainViewController: UIViewController {
     super.viewDidLoad()
     setupSubview()
   }
-  
+
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
     let configuration = ARImageTrackingConfiguration()
 
-    if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "months images",
-        bundle: Bundle.main) {
+    if let trackedImages = ARReferenceImage.referenceImages(
+      inGroupNamed: "months images",
+      bundle: Bundle.main
+    ) {
       configuration.trackingImages = trackedImages
       configuration.maximumNumberOfTrackedImages = 1
     }
 
     sceneView.session.run(configuration)
   }
-  
+
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     presentBottomSheet()
   }
-  
+
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     sceneView.session.pause()
@@ -86,20 +81,29 @@ extension MainViewController: ARSCNViewDelegate {
       return
     }
 
+    guard let url = Bundle.main.url(
+      forResource: month,
+      withExtension: "mp4",
+      subdirectory: "months videos"
+    ) else {
+      return
+    }
+
     DispatchQueue.main.async {
       UIView.animate(withDuration: 0.4) {
         self.finishARGuide()
       }
     }
 
-    let player = AVPlayer(playerItem: AVPlayerItem(url: Bundle.main.url(
-      forResource: month, withExtension: "mp4", subdirectory: "months videos"
-    )!))
+    let player = AVPlayer(playerItem: AVPlayerItem(url: url))
 
     player.play()
 
-    NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime,
-                                           object: player.currentItem, queue: nil) { _ in
+    NotificationCenter.default.addObserver(
+      forName: .AVPlayerItemDidPlayToEndTime,
+      object: player.currentItem,
+      queue: nil
+    ) { _ in
       player.seek(to: CMTime.zero)
       player.play()
     }
